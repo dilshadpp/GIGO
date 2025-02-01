@@ -1,0 +1,281 @@
+/* Default header styles for larger screens (desktops and laptops) */
+.sticky-header {
+  width: 100%;
+  background-color: var(--light);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 12vh; /* 12% of viewport height on larger screens */
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Vertically center items inside header */
+  box-sizing: border-box; /* Include padding in total width */
+}
+
+/* Container styles for better alignment inside the header */
+.sticky-header .header-container {
+  display: flex;
+  justify-content: space-between; /* Ensure both sections are aligned horizontally */
+  align-items: center; /* Vertically center items inside the container */
+  width: 100%;
+  padding: 0 1rem; /* Adjust padding for better spacing */
+  box-sizing: border-box;
+}
+
+/* Logo section - header-left */
+.sticky-header .header-left {
+  display: flex;
+  align-items: center; /* Center logo vertically */
+  justify-content: flex-start; /* Align logo to the left */
+  height: 100%;
+}
+
+.sticky-header .header-left .logo-image {
+  height: 50px; /* Set logo height */
+  width: auto; /* Maintain aspect ratio */
+  display: block;
+  object-fit: contain; /* Ensures the logo image fits within its dimensions */
+}
+
+/* Header-right section: icons, login, notifications, and options */
+.sticky-header .header-right {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center all icons horizontally */
+}
+
+/* Styling for icons inside the header-right */
+.sticky-header .header-right .login-icon,
+.sticky-header .header-right .notification-icon,
+.sticky-header .header-right .options-icon {
+  width: 30px;
+  height: auto;
+  margin: 10px;
+  position: relative;
+  transition: transform 0.3s ease;
+  display: inline-block;
+  /* Ensure the icon container's content is centered */
+  text-align: center;
+}/* Styling for icons inside the header-right */
+.sticky-header .header-right .login-icon,
+.sticky-header .header-right .notification-icon,
+.sticky-header .header-right .options-icon {
+  width: 30px;
+  height: auto;
+  position: relative;
+  transition: transform 0.3s ease;
+  display: inline-block;
+  text-align: center; /* Ensure the icon container's content is centered */
+  margin: 10px; /* Default margin for larger screens */
+}
+
+/* Adjust margin for tablet screens */
+@media (max-width: 1024px) {
+  .sticky-header .header-right .login-icon,
+  .sticky-header .header-right .notification-icon,
+  .sticky-header .header-right .options-icon {
+    margin: 8px; /* Reduced margin for tablet screens */
+  }
+}
+
+/* Adjust margin for mobile screens */
+@media (max-width: 768px) {
+  .sticky-header .header-right .login-icon,
+  .sticky-header .header-right .notification-icon,
+  .sticky-header .header-right .options-icon {
+    margin: 6px; /* Further reduced margin for mobile screens */
+  }
+}
+
+/* Adjust margin for very small mobile screens */
+@media (max-width: 480px) {
+  .sticky-header .header-right .login-icon,
+  .sticky-header .header-right .notification-icon,
+  .sticky-header .header-right .options-icon {
+    margin: 5px; /* Even smaller margin for small screens */
+  }
+}
+
+/* Hover effect for icons */
+.sticky-header .header-right .login-icon:hover,
+.sticky-header .header-right .notification-icon:hover,
+.sticky-header .header-right .options-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Tooltip styling for icons */
+.sticky-header .header-right .tooltip-text {
+  display: none; /* Hidden by default */
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 12px;
+  bottom: 100%; /* Position above icon */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Show tooltip on hover */
+.sticky-header .header-right .login-container:hover .tooltip-text,
+.sticky-header .header-right .notification-container:hover .tooltip-text,
+.sticky-header .header-right .options-container:hover .tooltip-text {
+  display: block;
+}
+
+/* Location button dropdown and styling */
+.sticky-header .location-container {
+  display: inline-block;
+  position: relative;
+  margin: auto;
+}
+
+.sticky-header .location-button {
+  background-color: white;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+  border: none;
+  outline: none;
+}
+
+.sticky-header .location-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 180px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  padding: 10px;
+}
+
+.sticky-header .location-dropdown input {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+}
+
+.sticky-header .location-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.sticky-header .location-dropdown ul li {
+  padding: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.sticky-header .location-dropdown ul li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Display location dropdown on hover */
+.sticky-header .location-container:hover .location-dropdown {
+  display: block;
+}
+
+/* Home icon section */
+.sticky-header .home-container {
+  display: inline-block;
+  position: relative;
+}
+
+.sticky-header .home-icon {
+  width: 30px;
+  height: auto;
+  margin: auto;
+  position: relative;
+  transition: transform 0.3s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Hover effect for home icon */
+.sticky-header .home-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Tooltip for home icon */
+.sticky-header .home-container .tooltip-text {
+  visibility: hidden;
+  width: 100px;
+  background-color: rgb(32, 26, 26);
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 5px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -50px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+/* Show tooltip for home icon on hover */
+.sticky-header .home-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Adjusting layout for small screens */
+@media (max-width: 1024px) {
+  .sticky-header .header-left {
+    padding-left: 10px;
+  }
+
+  .sticky-header .logo-image {
+    height: 45px; /* Adjust logo height for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .sticky-header .header-left {
+    padding-left: 8px; /* Adjust for smaller screens */
+  }
+
+  .sticky-header .logo-image {
+    height: 40px; /* Reduce logo height */
+  }
+}
+
+@media (max-width: 480px) {
+  .sticky-header .header-left {
+    padding-left: 6px; /* Adjust for mobile screens */
+  }
+
+  .sticky-header .logo-image {
+    height: 35px; /* Further reduce logo height */
+  }
+
+  /* Center header content for mobile */
+  .sticky-header {
+    display: flex;
+    justify-content: center;
+  }
+
+  .header-left {
+    padding-left: 0; /* Remove padding */
+  }
+}
+
+.header-container {
+  width: 95%;
+  margin: 0 auto;
+}
