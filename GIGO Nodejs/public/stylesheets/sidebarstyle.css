@@ -18,20 +18,33 @@
 
 /* Sidebar Header */
 .sidebar-header {
-    text-align: center;
+    display: flex;
+    align-items: center;  /* Align items horizontally */
     padding: 20px 15px;
     border-bottom: 2px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 20px;
 }
 
-.sidebar-header a {
-    color: white;
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: 600;
+/* Profile Image Style */
+.profile-image {
+    width: 60px; /* Increased the size of the profile picture */
+    height: 60px;
+    border-radius: 50%; /* Makes the image round */
+    margin-right: 15px; /* Adds space between the image and name */
+    vertical-align: middle; /* Aligns the image with the text */
 }
 
-.sidebar-header a:hover {
+/* Profile Name Style */
+.profile-name {
+    color: white;
+    text-decoration: none;
+    font-size: 26px; /* Increased the font size of the username */
+    font-weight: 600;
+    text-align: left; /* Aligning to the left */
+    line-height: 40px; /* Aligns text vertically with the profile image */
+}
+
+.profile-name:hover {
     color: rgba(255, 255, 255, 0.8);
 }
 
@@ -42,19 +55,21 @@
     color: white;
     padding: 15px;
     text-decoration: none;
-    font-size: 18px;
-    transition: background 0.3s ease;
+    font-size: 19px; /* Reduced font size for icons */
+    transition: background-color 0.3s ease;
 }
 
+/* Sidebar Links Hover Effect */
 #sidebar-container a:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Sidebar Icons */
 .sidebar-icon {
-    width: 40px;
-    height: 40px;
-    margin-right: 15px;
+    width: 32px; /* Slightly reduced icon size */
+    height: 32px;
+    margin-left: 10%;
+    margin-right: 15%;
 }
 
 /* Content Area */
