@@ -38,7 +38,7 @@
   object-fit: contain; /* Ensures the logo image fits within its dimensions */
 }
 
-/* Header-right section: icons, login, notifications, and options */
+/* Header-right section: icons, login, notifications, settings, and options */
 .sticky-header .header-right {
   display: flex;
   align-items: center;
@@ -48,6 +48,7 @@
 /* Styling for icons inside the header-right */
 .sticky-header .header-right .login-icon,
 .sticky-header .header-right .notification-icon,
+.sticky-header .header-right .settings-icon,
 .sticky-header .header-right .options-icon {
   width: 30px;
   height: auto;
@@ -55,25 +56,14 @@
   position: relative;
   transition: transform 0.3s ease;
   display: inline-block;
-  /* Ensure the icon container's content is centered */
-  text-align: center;
-}/* Styling for icons inside the header-right */
-.sticky-header .header-right .login-icon,
-.sticky-header .header-right .notification-icon,
-.sticky-header .header-right .options-icon {
-  width: 30px;
-  height: auto;
-  position: relative;
-  transition: transform 0.3s ease;
-  display: inline-block;
   text-align: center; /* Ensure the icon container's content is centered */
-  margin: 10px; /* Default margin for larger screens */
 }
 
 /* Adjust margin for tablet screens */
 @media (max-width: 1024px) {
   .sticky-header .header-right .login-icon,
   .sticky-header .header-right .notification-icon,
+  .sticky-header .header-right .settings-icon,
   .sticky-header .header-right .options-icon {
     margin: 8px; /* Reduced margin for tablet screens */
   }
@@ -83,6 +73,7 @@
 @media (max-width: 768px) {
   .sticky-header .header-right .login-icon,
   .sticky-header .header-right .notification-icon,
+  .sticky-header .header-right .settings-icon,
   .sticky-header .header-right .options-icon {
     margin: 6px; /* Further reduced margin for mobile screens */
   }
@@ -92,6 +83,7 @@
 @media (max-width: 480px) {
   .sticky-header .header-right .login-icon,
   .sticky-header .header-right .notification-icon,
+  .sticky-header .header-right .settings-icon,
   .sticky-header .header-right .options-icon {
     margin: 5px; /* Even smaller margin for small screens */
   }
@@ -100,6 +92,7 @@
 /* Hover effect for icons */
 .sticky-header .header-right .login-icon:hover,
 .sticky-header .header-right .notification-icon:hover,
+.sticky-header .header-right .settings-icon:hover,
 .sticky-header .header-right .options-icon:hover {
   transform: scale(1.1);
 }
@@ -121,71 +114,16 @@
 /* Show tooltip on hover */
 .sticky-header .header-right .login-container:hover .tooltip-text,
 .sticky-header .header-right .notification-container:hover .tooltip-text,
+.sticky-header .header-right .settings-container:hover .tooltip-text,
 .sticky-header .header-right .options-container:hover .tooltip-text {
   display: block;
 }
 
-/* Location button dropdown and styling */
-.sticky-header .location-container {
-  display: inline-block;
-  position: relative;
-  margin: auto;
-}
-
-.sticky-header .location-button {
-  background-color: white;
-  padding: 8px 15px;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 14px;
-  border: none;
-  outline: none;
-}
-
-.sticky-header .location-dropdown {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  width: 180px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-  z-index: 10;
-  padding: 10px;
-}
-
-.sticky-header .location-dropdown input {
-  width: 100%;
-  padding: 6px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
-  outline: none;
-}
-
-.sticky-header .location-dropdown ul {
-  list-style: none;
-  padding: 0;
-  margin: 8px 0 0;
-  max-height: 150px;
-  overflow-y: auto;
-}
-
-.sticky-header .location-dropdown ul li {
-  padding: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.sticky-header .location-dropdown ul li:hover {
-  background-color: #f0f0f0;
-}
-
-/* Display location dropdown on hover */
-.sticky-header .location-container:hover .location-dropdown {
-  display: block;
+/* Settings icon specific styles */
+.sticky-header .settings-icon {
+  width: 35px;
+  height: auto;
+  margin: 10px;
 }
 
 /* Home icon section */
