@@ -6,7 +6,7 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 12vh; /* 12% of viewport height on larger screens */
+  height: 10vh; /* 12% of viewport height on larger screens */
   display: flex;
   justify-content: space-between;
   align-items: center; /* Vertically center items inside header */
