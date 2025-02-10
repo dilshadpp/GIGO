@@ -8,17 +8,14 @@ const router = express.Router();
  */
 router.get('/', (req, res) => {
     try {
-        // TEMPORARY FIX: Manually setting user for debugging
-        req.user = { role: 'provider' }; // REMOVE this after debugging
+        req.user = { role: 'provider' }; // REMOVE after debugging
 
         const userRole = req.user ? req.user.role : null;
         const isUser = userRole === 'user';
         const isAdmin = userRole === 'admin';
         const isProvider = userRole === 'provider';
 
-        console.log("DEBUG: Full req.user ->", req.user);
-        console.log("DEBUG: User Role ->", userRole);
-        console.log("DEBUG: isProvider ->", isProvider);
+        console.log("DEBUG: Provider Home - User Role:", userRole);
 
         res.status(200).render('provider/home_page', {
             title: 'Provider Home',
@@ -33,4 +30,33 @@ router.get('/', (req, res) => {
         res.status(500).send("Internal Server Error");
     }
 });
+
+/**
+ * @route   GET /provider/global
+ * @desc    Render Global Network Page
+ * @access  Private (Requires Authentication)
+ */
+router.get('/global', (req, res) => {
+    try {
+        req.user = { role: 'provider' }; // REMOVE this after debugging
+
+        const userRole = req.user ? req.user.role : null;
+        const isUser = userRole === 'user';
+        const isAdmin = userRole === 'admin';
+        const isProvider = userRole === 'provider';
+
+        res.render('provider/global_page', {
+            title: 'Global Network',
+            isAdmin,
+            isProvider,
+            isUser,
+            isHeaderPage: true,
+            isSidebarPage: true
+        });
+    } catch (error) {
+        console.error("Error loading Global Network Page:", error);
+        res.status(500).send("Internal Server Error");
+    }
+});
+
 module.exports = router;
