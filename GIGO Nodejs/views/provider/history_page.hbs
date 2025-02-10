@@ -1,0 +1,22 @@
+<!-- Work History Section -->
+<section class="work-history">
+    <div class="container">
+        <h2>Work History</h2>
+        <div class="row">
+            {{#each workHistory}}
+            <div class="col-md-4">
+                <div class="work-card">
+                    <h3>{{title}}</h3>
+                    <p>{{description}}</p>
+                    <div class="work-details">
+                        <p>Payment: <span>₹{{payment}}</span></p>
+                        <p>Workers: <span>{{workers}}</span></p>
+                        <p>Rating: <span class="rating">{{#times rating}}★{{/times}} {{rating}}/5</span></p>
+                        <p>Date: <span>{{date}}</span></p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</section>
