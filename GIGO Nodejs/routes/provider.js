@@ -59,4 +59,36 @@ router.get('/global', (req, res) => {
     }
 });
 
+/**
+ * @route   GET /provider/history
+ * @desc    Render Provider History Page
+ * @access  Private (Requires Authentication)
+ */
+router.get('/history', (req, res) => {
+    try {
+        req.user = { role: 'provider' }; // REMOVE after debugging
+
+        const userRole = req.user ? req.user.role : null;
+        const isUser = userRole === 'user';
+        const isAdmin = userRole === 'admin';
+        const isProvider = userRole === 'provider';
+
+        console.log("DEBUG: Provider History - User Role:", userRole);
+
+        res.status(200).render('provider/history_page', {
+            title: 'Provider History',
+            isAdmin,
+            isProvider,
+            isUser,
+            isHeaderPage: true,
+            isSidebarPage: true,
+            isHistoryPage: true
+
+        });
+    } catch (error) {
+        console.error("Error loading Provider History Page:", error);
+        res.status(500).send("Internal Server Error");
+    }
+});
+
 module.exports = router;
