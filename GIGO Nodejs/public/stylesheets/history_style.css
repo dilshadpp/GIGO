@@ -1,3 +1,4 @@
+/* Root Variables */
 :root {
     --primary-color: #2563eb;
     --secondary-color: #1e40af;
@@ -6,6 +7,7 @@
     --card-background: #ffffff;
 }
 
+/* Reset Default Styles */
 * {
     margin: 0;
     padding: 0;
@@ -19,18 +21,22 @@ body {
     line-height: 1.6;
 }
 
-main {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+/* Content Section */
+.content {
+    margin-left: 260px; /* Adjusted to match sidebar width */
+    padding: 20px;
+    width: calc(100% - 260px);
+    transition: margin-left 0.3s ease-in-out;
 }
 
+/* Work History Section */
 .work-history {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
 }
 
+/* Individual Work Cards */
 .work-card {
     background-color: var(--card-background);
     border-radius: 0.5rem;
@@ -49,6 +55,7 @@ main {
     margin-bottom: 1rem;
 }
 
+/* Work Details */
 .work-details {
     margin-top: 1rem;
 }
@@ -65,4 +72,19 @@ main {
 
 .rating {
     color: #eab308;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content {
+        margin-left: 210px;
+        width: calc(100% - 210px);
+    }
+}
+
+@media (max-width: 576px) {
+    .content {
+        margin-left: 0;
+        width: 100%;
+    }
 }
