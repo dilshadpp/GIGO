@@ -1,0 +1,36 @@
+/* ============================= */
+/*      Footer Styling           */
+/* ============================= */
+
+.footer {
+    position: fixed;  /* Sticks to the bottom */
+    bottom: 0;
+    left: 0;
+    width: 100%;  /* Full width */
+    height: 60px; /* Specific height */
+    background-color: #222; /* Dark background */
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Make sure content pushes the footer to the bottom */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.history-container {
+    flex: 1; /* Pushes footer to the bottom */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .footer {
+        height: 50px; /* Adjust height for smaller screens */
+        font-size: 14px;
+    }
+}
