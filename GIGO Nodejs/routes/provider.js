@@ -82,11 +82,40 @@ router.get('/history', (req, res) => {
             isUser,
             isHeaderPage: true,
             isSidebarPage: true,
-            isHistoryPage: true
 
         });
     } catch (error) {
         console.error("Error loading Provider History Page:", error);
+        res.status(500).send("Internal Server Error");
+    }
+});
+
+/**
+ * @route   GET /provider/add_ork
+ * @desc    Render Add Work Page
+ * @access  Private (Requires Authentication)
+ */
+router.get('/add-work', (req, res) => {
+    try {
+        req.user = { role: 'provider' }; // REMOVE after debugging
+
+        const userRole = req.user ? req.user.role : null;
+        const isUser = userRole === 'user';
+        const isAdmin = userRole === 'admin';
+        const isProvider = userRole === 'provider';
+
+        console.log("DEBUG: Add Work Page - User Role:", userRole);
+
+        res.status(200).render('provider/add_work_page', {
+            title: 'Add Work',
+            isAdmin,
+            isProvider,
+            isUser,
+            isHeaderPage: true,
+            isSidebarPage: true,
+        });
+    } catch (error) {
+        console.error("Error loading Add Work Page:", error);
         res.status(500).send("Internal Server Error");
     }
 });
