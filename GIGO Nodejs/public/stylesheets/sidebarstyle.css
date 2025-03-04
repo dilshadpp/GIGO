@@ -5,7 +5,7 @@
 
 /* Sidebar styles */
 #sidebar-container {
-    width: 250px;
+    width: 20%;
     height: calc(100vh - 60px); /* Adjust height so it doesn't include the header */
     position: fixed;
     top: 60px; /* Push it below the header */

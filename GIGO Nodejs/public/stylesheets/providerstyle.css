@@ -1,0 +1,186 @@
+/* ============================= */
+/*        Provider Styles        */
+/* ============================= */
+
+/* Reset body to normal flow */
+body {
+    display: block; /* Ensures normal document flow */
+    font-family: Arial, sans-serif; /* Sets a clean, readable font */
+    background-color: #f4f4f4; /* Light grey background for better readability */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+}
+
+/* ============================= */
+/*      Common Container Styles  */
+/* ============================= */
+
+.container {
+    width: 80%; /* Makes container responsive */
+    max-width: 1200px; /* Prevents container from becoming too wide */
+    background: white; /* Sets a white background */
+    padding: 40px; /* Adds space inside the container */
+    border-radius: 10px; /* Rounds the corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow effect */
+    margin: auto; /* Centers the container */
+    text-align: center; /* Centers text */
+}
+
+/* ============================= */
+/*      History Page Styles      */
+/* ============================= */
+
+.history-container {
+    width: 80%; /* Keeps a uniform width */
+    text-align: center; /* Centers content */
+    background: white; /* White background */
+    margin-left: 20%; /* Positions it towards the right */
+}
+
+.history-header {
+    font-size: 28px; /* Increases header text size */
+    font-weight: bold; /* Makes text bold */
+    color: #333; /* Dark grey for better readability */
+}
+
+/* ============================= */
+/*      Global Page Styles       */
+/* ============================= */
+
+.global-container {
+    width: 80%; /* Keeps container width consistent */
+    text-align: center; /* Centers text */
+    background: white; /* White background */
+    margin-left: 20%; /* Aligns it properly */
+}
+
+.global-header {
+    font-size: 28px; /* Large text for better visibility */
+    font-weight: bold; /* Bold for emphasis */
+    color: #333; /* Dark grey color */
+}
+
+/* ============================= */
+/*      Add Work Page Styles     */
+/* ============================= */
+
+.add-work-container {
+    width: 80%; /* Consistent width across pages */
+    text-align: center; /* Centers content */
+    background: white; /* White background */
+    margin-left: 20%; /* Aligns it with other containers */
+}
+
+.add-work-header {
+    font-size: 28px; /* Large, readable header */
+    font-weight: bold; /* Bold for emphasis */
+    color: #333; /* Dark grey for contrast */
+}
+
+/* ============================= */
+/*      Profile Page Styles      */
+/* ============================= */
+
+.profile-container {
+    width: 80%; /* Standard width for consistency */
+    text-align: center; /* Centers content */
+    background: white; /* White background for clarity */
+    margin-left: 20%; /* Aligns properly */
+    padding: 40px; /* Adds internal spacing */
+    border-radius: 10px; /* Softens edges with rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+}
+
+/* Wrapper inside profile-container */
+.profile-wrapper {
+    width: 100%; /* Takes full width */
+    display: flex; /* Enables flexbox */
+    flex-direction: column; /* Arranges items vertically */
+    align-items: center; /* Centers items */
+}
+
+/* Row Layout */
+.row {
+    display: flex; /* Enables flexible layout */
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+    justify-content: space-between; /* Distributes space evenly */
+    width: 100%; /* Ensures full width usage */
+}
+
+/* Profile Image Section */
+.profile-left {
+    flex: 1; /* Takes up 1 portion of the space */
+    max-width: 30%; /* Limits width */
+    text-align: center; /* Centers image */
+}
+
+/* Profile Image Styling */
+.avatar img {
+    width: 120px; /* Fixed size for uniformity */
+    height: 120px; /* Maintains aspect ratio */
+    border-radius: 50%; /* Makes it circular */
+    border: 3px solid #ddd; /* Adds a soft border */
+    object-fit: cover; /* Ensures image fits well */
+}
+
+/* Dashboard Heading Section */
+.profile-right {
+    flex: 2; /* Takes up more space */
+    max-width: 65%; /* Limits max width */
+    text-align: left; /* Aligns text to the left */
+}
+
+.profile-right h1 {
+    font-size: 28px; /* Large font for importance */
+    color: #333; /* Dark grey for readability */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+.profile-right p {
+    font-size: 16px; /* Standard font size */
+    color: #666; /* Softer text color for readability */
+}
+
+/* ============================= */
+/*      Responsive Design        */
+/* ============================= */
+
+@media screen and (max-width: 768px) {
+    /* Make containers fully responsive on smaller screens */
+    .container, 
+    .history-container, 
+    .global-container, 
+    .add-work-container, 
+    .profile-container {
+        width: 95%; /* Increases width for small screens */
+        padding: 20px; /* Reduces padding */
+        margin-left: 0; /* Resets margin for better alignment */
+    }
+
+    /* Adjust header font sizes for smaller screens */
+    .history-header, 
+    .global-header, 
+    .add-work-header {
+        font-size: 24px; /* Slightly smaller for better fitting */
+    }
+
+    /* Adjust profile layout */
+    .row {
+        flex-direction: column; /* Stacks elements vertically */
+        align-items: center; /* Centers them */
+    }
+
+    .profile-left,
+    .profile-right {
+        max-width: 100%; /* Makes them full width */
+        text-align: center; /* Centers text */
+    }
+
+    .profile-right h1 {
+        font-size: 24px; /* Slightly smaller title */
+    }
+
+    .profile-right p {
+        font-size: 14px; /* Smaller text for readability */
+    }
+}
