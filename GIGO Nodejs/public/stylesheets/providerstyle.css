@@ -142,6 +142,57 @@ body {
 }
 
 /* ============================= */
+/*      Status Page Styles       */
+/* ============================= */
+
+.status-container {
+    width: 80%; /* Keeps container width consistent */
+    text-align: center; /* Centers text */
+    background: white; /* White background */
+    margin-left: 20%; /* Aligns it properly */
+}
+
+.status-header {
+    font-size: 28px; /* Large text for better visibility */
+    font-weight: bold; /* Bold for emphasis */
+    color: #333; /* Dark grey color */
+}
+
+/* ============================= */
+/*      Payment Page Styles      */
+/* ============================= */
+
+.payment-container {
+    width: 80%; /* Keeps container width consistent */
+    text-align: center; /* Centers text */
+    background: white; /* White background */
+    margin-left: 20%; /* Aligns it properly */
+}
+
+.payment-header {
+    font-size: 28px; /* Large text for better visibility */
+    font-weight: bold; /* Bold for emphasis */
+    color: #333; /* Dark grey color */
+}
+
+/* ============================= */
+/*        Inbox Page Styles      */
+/* ============================= */
+
+.inbox-container {
+    width: 80%; /* Keeps container width consistent */
+    text-align: center; /* Centers text */
+    background: white; /* White background */
+    margin-left: 20%; /* Aligns it properly */
+}
+
+.inbox-header {
+    font-size: 28px; /* Large text for better visibility */
+    font-weight: bold; /* Bold for emphasis */
+    color: #333; /* Dark grey color */
+}
+
+/* ============================= */
 /*      Responsive Design        */
 /* ============================= */
 
